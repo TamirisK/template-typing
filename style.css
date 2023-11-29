@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section.typing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000d14;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.static {
+  font-size: 100px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.dynamic li {
+  font-size: 100px;
+  list-style: none;
+  color: #a673e7;
+  font-weight: 700;
+  animation: slide 6s steps(4) infinite; /* 6 = 4 * 1.5 */
+  position: relative;
+  top: 0;
+}
+
+@keyframes slide {
+  100% {
+    top: -460px; /* -469 = 4 * 115 */
+  }
+}
+
+.dynamic {
+  margin-left: 25px;
+  height: 110px;
+  overflow: hidden; 
+}
+
+.dynamic li span {
+  position: relative;
+}
+
+.dynamic li span::after {
+  content: "";
+  border-left: 2px solid #a673e7; 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  animation: typing 1.5s steps(9) infinite;
+  background-color: #000d14;
+}
+
+@keyframes typing {
+  100% {
+    left: 100%;
+    margin: 0 50px;
+  }
+}
